@@ -14,6 +14,7 @@
       <el-dropdown trigger="click" size="medium">
         <div class="avatar-wrapper">
           <img src="@/assets/icons/avatar.jpeg" class="user-avatar" />
+          <span>倾倾倾风</span>
           <CaretBottom style="width: 1em; height: 1em; margin-left: 4px" />
         </div>
         <template #dropdown>
@@ -77,7 +78,6 @@ const loginOut = () => {
 .avatar-wrapper {
   display: flex;
   align-items: center;
-  margin-top: 5px;
   position: relative;
   cursor: pointer;
 
@@ -85,7 +85,8 @@ const loginOut = () => {
     cursor: pointer;
     width: 40px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 50%;
+    // border: 2px solid #f60;
   }
 
   .el-icon-caret-bottom {

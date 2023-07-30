@@ -13,7 +13,7 @@
     <div v-if="settings.ShowDropDown" class="right-menu rowSC">
       <el-dropdown trigger="click" size="medium">
         <div class="avatar-wrapper">
-          <img src="https://github.jzfai.top/file/images/nav-right-logo.gif" class="user-avatar" />
+          <img src="@/assets/icons/avatar.jpeg" class="user-avatar" />
           <CaretBottom style="width: 1em; height: 1em; margin-left: 4px" />
         </div>
         <template #dropdown>
@@ -21,7 +21,7 @@
             <router-link to="/">
               <el-dropdown-item>{{ langTitle('Home') }}</el-dropdown-item>
             </router-link>
-            <a target="_blank" href="https://github.com/jzfai/vue3-admin-ts">
+            <a target="_blank" href="https://github.com/KinXpeng/vue3-admin-ts">
               <el-dropdown-item>{{ langTitle('Github') }}</el-dropdown-item>
             </a>
             <!--<el-dropdown-item>修改密码</el-dropdown-item>-->

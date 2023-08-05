@@ -12,7 +12,7 @@ export const useThemeConfig = defineStore('themeConfig', {
   state: (): ThemeConfigState => ({
     themeConfig: {
       // 是否开启布局配置抽屉
-      isDrawer: true,
+      isDrawer: false,
 
       /**
        * 全局主题

@@ -57,7 +57,7 @@ import { defineAsyncComponent, reactive, onMounted, ref } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
 
 // 引入组件
-const UserDialog = defineAsyncComponent(() => import('/@/views/form/matter/dialog.vue'));
+const UserDialog = defineAsyncComponent(() => import('@/views/form/matter/dialog.vue'));
 
 // 定义变量内容
 interface UserState {

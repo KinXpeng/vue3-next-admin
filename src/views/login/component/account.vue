@@ -49,12 +49,12 @@ import { useRoute, useRouter } from 'vue-router';
 import { ElMessage } from 'element-plus';
 import Cookies from 'js-cookie';
 import { storeToRefs } from 'pinia';
-import { useThemeConfig } from '/@/stores/themeConfig';
-import { initFrontEndControlRoutes } from '/@/router/frontEnd';
-import { initBackEndControlRoutes } from '/@/router/backEnd';
-import { Session } from '/@/utils/storage';
-import { formatAxis } from '/@/utils/formatTime';
-import { NextLoading } from '/@/utils/loading';
+import { useThemeConfig } from '@/stores/themeConfig';
+import { initFrontEndControlRoutes } from '@/router/frontEnd';
+import { initBackEndControlRoutes } from '@/router/backEnd';
+import { Session } from '@/utils/storage';
+import { formatAxis } from '@/utils/formatTime';
+import { NextLoading } from '@/utils/loading';
 
 // 定义变量内容
 const storesThemeConfig = useThemeConfig();

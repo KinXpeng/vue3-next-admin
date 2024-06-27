@@ -34,14 +34,14 @@ declare module 'vue-router' {
  * 定义动态路由
  * 前端添加路由，请在顶级节点的 `children 数组` 里添加
  * @description 未开启 isRequestRoutes 为 true 时使用（前端控制路由），开启时第一个顶级 children 的路由将被替换成接口请求回来的路由数据
- * @description 各字段请查看 `/@/views/system/menu/component/addMenu.vue 下的 ruleForm`
+ * @description 各字段请查看 `@/views/system/menu/component/addMenu.vue 下的 ruleForm`
  * @returns 返回路由菜单数据
  */
 export const dynamicRoutes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: '/',
-    component: () => import('/@/layout/index.vue'),
+    component: () => import('@/layout/index.vue'),
     redirect: '/home',
     meta: {
       isKeepAlive: true,
@@ -50,7 +50,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
       {
         path: '/home',
         name: 'home',
-        component: () => import('/@/views/home/index.vue'),
+        component: () => import('@/views/home/index.vue'),
         meta: {
           title: '首页',
           isLink: '',
@@ -65,7 +65,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
       {
         path: '/form',
         name: 'form',
-        component: () => import('/@/layout/routerView/parent.vue'),
+        component: () => import('@/layout/routerView/parent.vue'),
         redirect: '/form/matter',
         meta: {
           title: '表单',
@@ -81,7 +81,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           {
             path: '/form/matter',
             name: 'formMatter',
-            component: () => import('/@/views/form/matter/index.vue'),
+            component: () => import('@/views/form/matter/index.vue'),
             meta: {
               title: '事项列表',
               isLink: '',
@@ -98,7 +98,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
       {
         path: '/advance',
         name: 'advance',
-        component: () => import('/@/layout/routerView/parent.vue'),
+        component: () => import('@/layout/routerView/parent.vue'),
         redirect: '/advance/recognition',
         meta: {
           title: '进阶',
@@ -114,7 +114,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           {
             path: '/advance/recognition',
             name: 'recognition',
-            component: () => import('/@/views/advance/recognition/index.vue'),
+            component: () => import('@/views/advance/recognition/index.vue'),
             meta: {
               title: '文字识别',
               isLink: '',
@@ -125,13 +125,28 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
               roles: ['admin'],
               icon: 'ele-Picture',
             },
+          },
+          {
+            path: '/advance/tree',
+            name: 'tree',
+            component: () => import('@/views/advance/tree/index.vue'),
+            meta: {
+              title: '树组件',
+              isLink: '',
+              isHide: false,
+              isKeepAlive: true,
+              isAffix: false,
+              isIframe: false,
+              roles: ['admin'],
+              icon: 'ele-Guide',
+            },
           }
         ],
       },
       {
         path: '/system',
         name: 'system',
-        component: () => import('/@/layout/routerView/parent.vue'),
+        component: () => import('@/layout/routerView/parent.vue'),
         redirect: '/system/menu',
         meta: {
           title: '系统设置',
@@ -147,7 +162,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           {
             path: '/system/menu',
             name: 'systemMenu',
-            component: () => import('/@/views/system/menu/index.vue'),
+            component: () => import('@/views/system/menu/index.vue'),
             meta: {
               title: '菜单管理',
               isLink: '',
@@ -162,7 +177,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           {
             path: '/system/role',
             name: 'systemRole',
-            component: () => import('/@/views/system/role/index.vue'),
+            component: () => import('@/views/system/role/index.vue'),
             meta: {
               title: '角色管理',
               isLink: '',
@@ -177,7 +192,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           {
             path: '/system/user',
             name: 'systemUser',
-            component: () => import('/@/views/system/user/index.vue'),
+            component: () => import('@/views/system/user/index.vue'),
             meta: {
               title: '用户管理',
               isLink: '',
@@ -192,7 +207,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           {
             path: '/system/dept',
             name: 'systemDept',
-            component: () => import('/@/views/system/dept/index.vue'),
+            component: () => import('@/views/system/dept/index.vue'),
             meta: {
               title: '部门管理',
               isLink: '',
@@ -207,7 +222,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           {
             path: '/system/dic',
             name: 'systemDic',
-            component: () => import('/@/views/system/dic/index.vue'),
+            component: () => import('@/views/system/dic/index.vue'),
             meta: {
               title: '字典管理',
               isLink: '',
@@ -233,7 +248,7 @@ export const notFoundAndNoPower = [
   {
     path: '/:path(.*)*',
     name: 'notFound',
-    component: () => import('/@/views/error/404.vue'),
+    component: () => import('@/views/error/404.vue'),
     meta: {
       title: '找不到此页面',
       isHide: true,
@@ -242,7 +257,7 @@ export const notFoundAndNoPower = [
   {
     path: '/401',
     name: 'noPower',
-    component: () => import('/@/views/error/401.vue'),
+    component: () => import('@/views/error/401.vue'),
     meta: {
       title: '没有权限',
       isHide: true,
@@ -260,7 +275,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('/@/views/login/index.vue'),
+    component: () => import('@/views/login/index.vue'),
     meta: {
       title: '登录',
     },

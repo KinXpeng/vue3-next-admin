@@ -30,8 +30,8 @@
 <script setup lang="ts" name="layoutUpgrade">
 import { reactive, computed, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
-import { useThemeConfig } from '/@/stores/themeConfig';
-import { Local } from '/@/utils/storage';
+import { useThemeConfig } from '@/stores/themeConfig';
+import { Local } from '@/utils/storage';
 
 // 定义变量内容
 const storesThemeConfig = useThemeConfig();

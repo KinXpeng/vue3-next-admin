@@ -18,16 +18,16 @@ import { RouteRecordRaw } from 'vue-router';
 
 // 扩展 RouteMeta 接口
 declare module 'vue-router' {
-	interface RouteMeta {
-		title?: string;
-		isLink?: string;
-		isHide?: boolean;
-		isKeepAlive?: boolean;
-		isAffix?: boolean;
-		isIframe?: boolean;
-		roles?: string[];
-		icon?: string;
-	}
+  interface RouteMeta {
+    title?: string;
+    isLink?: string;
+    isHide?: boolean;
+    isKeepAlive?: boolean;
+    isAffix?: boolean;
+    isIframe?: boolean;
+    roles?: string[];
+    icon?: string;
+  }
 }
 
 /**
@@ -38,125 +38,191 @@ declare module 'vue-router' {
  * @returns 返回路由菜单数据
  */
 export const dynamicRoutes: Array<RouteRecordRaw> = [
-	{
-		path: '/',
-		name: '/',
-		component: () => import('/@/layout/index.vue'),
-		redirect: '/home',
-		meta: {
-			isKeepAlive: true,
-		},
-		children: [
-			{
-				path: '/home',
-				name: 'home',
-				component: () => import('/@/views/home/index.vue'),
-				meta: {
-					title: '首页',
-					isLink: '',
-					isHide: false,
-					isKeepAlive: true,
-					isAffix: true,
-					isIframe: false,
-					roles: ['admin', 'common'],
-					icon: 'iconfont icon-shouye',
-				},
-			},
-			{
-				path: '/system',
-				name: 'system',
-				component: () => import('/@/layout/routerView/parent.vue'),
-				redirect: '/system/menu',
-				meta: {
-					title: '系统设置',
-					isLink: '',
-					isHide: false,
-					isKeepAlive: true,
-					isAffix: false,
-					isIframe: false,
-					roles: ['admin'],
-					icon: 'iconfont icon-xitongshezhi',
-				},
-				children: [
-					{
-						path: '/system/menu',
-						name: 'systemMenu',
-						component: () => import('/@/views/system/menu/index.vue'),
-						meta: {
-							title: '菜单管理',
-							isLink: '',
-							isHide: false,
-							isKeepAlive: true,
-							isAffix: false,
-							isIframe: false,
-							roles: ['admin'],
-							icon: 'iconfont icon-caidan',
-						},
-					},
-					{
-						path: '/system/role',
-						name: 'systemRole',
-						component: () => import('/@/views/system/role/index.vue'),
-						meta: {
-							title: '角色管理',
-							isLink: '',
-							isHide: false,
-							isKeepAlive: true,
-							isAffix: false,
-							isIframe: false,
-							roles: ['admin'],
-							icon: 'ele-ColdDrink',
-						},
-					},
-					{
-						path: '/system/user',
-						name: 'systemUser',
-						component: () => import('/@/views/system/user/index.vue'),
-						meta: {
-							title: '用户管理',
-							isLink: '',
-							isHide: false,
-							isKeepAlive: true,
-							isAffix: false,
-							isIframe: false,
-							roles: ['admin'],
-							icon: 'iconfont icon-icon-',
-						},
-					},
-					{
-						path: '/system/dept',
-						name: 'systemDept',
-						component: () => import('/@/views/system/dept/index.vue'),
-						meta: {
-							title: '部门管理',
-							isLink: '',
-							isHide: false,
-							isKeepAlive: true,
-							isAffix: false,
-							isIframe: false,
-							roles: ['admin'],
-							icon: 'ele-OfficeBuilding',
-						},
-					},
-					{
-						path: '/system/dic',
-						name: 'systemDic',
-						component: () => import('/@/views/system/dic/index.vue'),
-						meta: {
-							title: '字典管理',
-							isLink: '',
-							isHide: false,
-							isKeepAlive: true,
-							isAffix: false,
-							isIframe: false,
-							roles: ['admin'],
-							icon: 'ele-SetUp',
-						},
-					},
-				],
-			},
-		],
-	},
+  {
+    path: '/',
+    name: '/',
+    component: () => import('/@/layout/index.vue'),
+    redirect: '/home',
+    meta: {
+      isKeepAlive: true,
+    },
+    children: [
+      {
+        path: '/home',
+        name: 'home',
+        component: () => import('/@/views/home/index.vue'),
+        meta: {
+          title: '首页',
+          isLink: '',
+          isHide: false,
+          isKeepAlive: true,
+          isAffix: true,
+          isIframe: false,
+          roles: ['admin', 'common'],
+          icon: 'iconfont icon-shouye',
+        },
+      },
+      {
+        path: '/form',
+        name: 'form',
+        component: () => import('/@/layout/routerView/parent.vue'),
+        redirect: '/form/matter',
+        meta: {
+          title: '表单',
+          isLink: '',
+          isHide: false,
+          isKeepAlive: true,
+          isAffix: false,
+          isIframe: false,
+          roles: ['admin'],
+          icon: 'ele-Memo',
+        },
+        children: [
+          {
+            path: '/form/matter',
+            name: 'formMatter',
+            component: () => import('/@/views/form/matter/index.vue'),
+            meta: {
+              title: '事项列表',
+              isLink: '',
+              isHide: false,
+              isKeepAlive: true,
+              isAffix: false,
+              isIframe: false,
+              roles: ['admin'],
+              icon: 'ele-ForkSpoon',
+            },
+          }
+        ],
+      },
+      {
+        path: '/advance',
+        name: 'advance',
+        component: () => import('/@/layout/routerView/parent.vue'),
+        redirect: '/advance/recognition',
+        meta: {
+          title: '进阶',
+          isLink: '',
+          isHide: false,
+          isKeepAlive: true,
+          isAffix: false,
+          isIframe: false,
+          roles: ['admin'],
+          icon: 'ele-Files',
+        },
+        children: [
+          {
+            path: '/advance/recognition',
+            name: 'recognition',
+            component: () => import('/@/views/advance/recognition/index.vue'),
+            meta: {
+              title: '文字识别',
+              isLink: '',
+              isHide: false,
+              isKeepAlive: true,
+              isAffix: false,
+              isIframe: false,
+              roles: ['admin'],
+              icon: 'ele-Picture',
+            },
+          }
+        ],
+      },
+      {
+        path: '/system',
+        name: 'system',
+        component: () => import('/@/layout/routerView/parent.vue'),
+        redirect: '/system/menu',
+        meta: {
+          title: '系统设置',
+          isLink: '',
+          isHide: false,
+          isKeepAlive: true,
+          isAffix: false,
+          isIframe: false,
+          roles: ['admin'],
+          icon: 'iconfont icon-xitongshezhi',
+        },
+        children: [
+          {
+            path: '/system/menu',
+            name: 'systemMenu',
+            component: () => import('/@/views/system/menu/index.vue'),
+            meta: {
+              title: '菜单管理',
+              isLink: '',
+              isHide: false,
+              isKeepAlive: true,
+              isAffix: false,
+              isIframe: false,
+              roles: ['admin'],
+              icon: 'iconfont icon-caidan',
+            },
+          },
+          {
+            path: '/system/role',
+            name: 'systemRole',
+            component: () => import('/@/views/system/role/index.vue'),
+            meta: {
+              title: '角色管理',
+              isLink: '',
+              isHide: false,
+              isKeepAlive: true,
+              isAffix: false,
+              isIframe: false,
+              roles: ['admin'],
+              icon: 'ele-ColdDrink',
+            },
+          },
+          {
+            path: '/system/user',
+            name: 'systemUser',
+            component: () => import('/@/views/system/user/index.vue'),
+            meta: {
+              title: '用户管理',
+              isLink: '',
+              isHide: false,
+              isKeepAlive: true,
+              isAffix: false,
+              isIframe: false,
+              roles: ['admin'],
+              icon: 'iconfont icon-icon-',
+            },
+          },
+          {
+            path: '/system/dept',
+            name: 'systemDept',
+            component: () => import('/@/views/system/dept/index.vue'),
+            meta: {
+              title: '部门管理',
+              isLink: '',
+              isHide: false,
+              isKeepAlive: true,
+              isAffix: false,
+              isIframe: false,
+              roles: ['admin'],
+              icon: 'ele-OfficeBuilding',
+            },
+          },
+          {
+            path: '/system/dic',
+            name: 'systemDic',
+            component: () => import('/@/views/system/dic/index.vue'),
+            meta: {
+              title: '字典管理',
+              isLink: '',
+              isHide: false,
+              isKeepAlive: true,
+              isAffix: false,
+              isIframe: false,
+              roles: ['admin'],
+              icon: 'ele-SetUp',
+            },
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 /**
@@ -164,24 +230,24 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
  * @link 参考：https://next.router.vuejs.org/zh/guide/essentials/history-mode.html#netlify
  */
 export const notFoundAndNoPower = [
-	{
-		path: '/:path(.*)*',
-		name: 'notFound',
-		component: () => import('/@/views/error/404.vue'),
-		meta: {
-			title: '找不到此页面',
-			isHide: true,
-		},
-	},
-	{
-		path: '/401',
-		name: 'noPower',
-		component: () => import('/@/views/error/401.vue'),
-		meta: {
-			title: '没有权限',
-			isHide: true,
-		},
-	},
+  {
+    path: '/:path(.*)*',
+    name: 'notFound',
+    component: () => import('/@/views/error/404.vue'),
+    meta: {
+      title: '找不到此页面',
+      isHide: true,
+    },
+  },
+  {
+    path: '/401',
+    name: 'noPower',
+    component: () => import('/@/views/error/401.vue'),
+    meta: {
+      title: '没有权限',
+      isHide: true,
+    },
+  },
 ];
 
 /**
@@ -191,12 +257,12 @@ export const notFoundAndNoPower = [
  * @returns 返回路由菜单数据
  */
 export const staticRoutes: Array<RouteRecordRaw> = [
-	{
-		path: '/login',
-		name: 'login',
-		component: () => import('/@/views/login/index.vue'),
-		meta: {
-			title: '登录',
-		},
-	},
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('/@/views/login/index.vue'),
+    meta: {
+      title: '登录',
+    },
+  },
 ];

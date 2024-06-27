@@ -19,12 +19,13 @@
 		"nprogress": "^0.2.0",
 		"pinia": "^2.0.34",
 		"qrcodejs2-fixes": "^0.0.2",
+		"qs": "^6.11.1",
 		"screenfull": "^6.0.2",
 		"sortablejs": "^1.15.0",
+		"tesseract.js": "^5.0.5",
 		"vue": "^3.2.47",
 		"vue-clipboard3": "^2.0.0",
 		"vue-demi": "^0.13.11",
-		"qs": "^6.11.1",
 		"vue-router": "^4.1.6"
 	},
 	"devDependencies": {
